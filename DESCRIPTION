@@ -1,0 +1,12 @@
+Package: Robocoap
+Type: Package
+Title: Generation of co-appearance information within texts
+Version: 0.1-0
+Author: Fran Urbano <viraltux@gmail.com>
+Depends: R (>= 2.10)
+Imports: data.table, igraph, markovchain, tm
+Suggests: testthat
+Maintainer: Fran Urbano <viraltux@gmail.com>
+Description: Generation of co-apperance matrices for a text in txt and pdf
+             format along with utilities to aid the generation of Gephi diagrams.
+License: GPL-3

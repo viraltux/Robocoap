@@ -1,0 +1,5 @@
+export(novel.coap)
+import(data.table)
+importFrom("graphics", "hist")
+importFrom("utils", "write.csv2")
+
