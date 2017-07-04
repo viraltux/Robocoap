@@ -48,7 +48,7 @@ if (file.exists(novel)) {
   ##################################################################
 
   ws <- wordSequence(novel, words = characters, sep = split)
- 
+
   ws$word <- gsub('\\\\W','', gsub('\\(','', gsub('\\|.*)','',ws$word)))
 
   firstcap <- function(x){
@@ -66,7 +66,7 @@ if (file.exists(novel)) {
   if (plot){plot(igraph::graph.adjacency(mt))}
 
   ## dynamic
-    
+
   ws <- data.table::as.data.table(ws)
   # gimmick to avoid a NOTE when R CMD checking the pkg coming from the data.table pkg
   # https://github.com/Rdatatable/data.table/issues/850

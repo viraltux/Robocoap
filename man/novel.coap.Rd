@@ -29,7 +29,8 @@ the language the novel is written on
 text econding in the TXT file
 }
   \item{gephi}{
-flag to generate files formatted to be use with Gephi
+flag to generate files formatted to be use with Gephi. The files name
+are 'novel.coapnet.csv' and 'novel.coapnet.timeset.csv'.
 }
   \item{plot}{
 flag to plot the adjacency co-apperance matrix
@@ -41,8 +42,16 @@ characters within split sections) will be similar to interactions among
 characters (defined as characters being object of actions by other
 characters). Check the example for further details.
 
-Specific writing formats like Theather plays or scientific papers  will
-be consider in future releases.
+Specific writing formats like theather plays or scientific papers  will
+be handled in future releases.
+
+Follow these steps in order to load the dynamic graph of coapperances in
+Gephi:
+
+1- 'novel.coapnet.csv':
+    Gephi -> File -> Open [Directed] -> Ok
+2- 'novel.coapnet.timeset.csv:
+    Gephi -> File -> Import Spreadsheet -> Next -> Finish
 }
 \value{
 A list contatining the following components:
@@ -64,29 +73,35 @@ Fran Urbano <viraltux@gmail.com>
 txt <- paste("A woman gets on a bus with her baby. The bus driver says:", "'Ugh,
 that's the ugliest baby I've ever seen!' The woman walks", "to the rear of the
 bus and sits down, fuming. She says to a man", "next to her: 'The driver just
-insulted me!\n\nPun\n' The man says:", "'You woman go up there and tell the
-driver off. Go on, I'll hold", "your monkey for you.'")
+insulted me!\n\nPun\n' The man says:", "'What? you just go back there and tell him
+off. Go on, I'll hold", "your monkey for you.'")
 
 res <- Robocoap::novel.coap(novel = txt, characters = c('woman','driver','baby|monkey','man'),
                  split = 'Pun', language = 'english', plot = FALSE)
 res$coapmat
 layout(matrix(c(1,2), ncol=2))
-plot(igraph::graph.adjacency(res$coapmat, weighted = TRUE, mode = 'plus'), main = 'Co-apperance')
+par(ask=FALSE)
+plot(igraph::graph.adjacency(res$coapmat), main = 'Coapperances')
 
+# Manually creating a matrix of interactions (A action on B)
 inter <- res$coapmat
 inter[] <- 0
-# A woman gets on a bus with her baby
-inter[4,1] <- 1;   inter[1,4] <- 1
-# The bus driver says
-inter[2,c(1,4)] <- 1
-# She says to a man next to her:
+# A woman gets on a bus with her baby ...
+inter[4,1] <- 1
+# The bus driver says ...
+inter[2,4] <- 1
+# She says to a man next to her: ...
 inter[4,3] <- 1
-# The man says:
+# The man says: ...
 inter[3,4] <- 1
 
-inter
-plot(igraph::graph.adjacency(inter, weighted = TRUE, mode = 'plus'), main = 'Interactions')
+plot(igraph::graph.adjacency(inter), main = 'Interactions')
 layout(1)
+
+## TODO Write instructions to load files into Gephi when gephi = TRUE
+## To import the results into gephi set the gephi parameter to TRUE
+
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
