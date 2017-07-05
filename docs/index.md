@@ -1,3 +1,5 @@
+#+OPTIONS: html-postamble:nil
+
 * Robocoap
 
 Given, let's say, a novel, one might be interested in having a social network of all the interactions among the characters.
@@ -37,5 +39,5 @@ Let's generate a dynamic network in [[https://gephi.org][Gephi]] with the help o
  + novel.coapnet.csv :: Gephi -> File -> Open [Directed] -> Ok
  + novel.coapnet.timeset.csv :: Gephi -> File -> Import Spreadsheet -> Next -> Finish
 5. Enjoy!
-[[./images/quijote.png]]
 [[https://viraltux.github.io/Robocoap/images/quijote.png]]
+
