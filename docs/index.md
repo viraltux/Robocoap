@@ -36,3 +36,6 @@ Let's generate a dynamic network in [[https://gephi.org][Gephi]] with the help o
 4. We now load the generated files ~novel.coapnet.csv~ and ~novel.coapnet.timeset.csv~ into Gephi as follows:
  + novel.coapnet.csv :: Gephi -> File -> Open [Directed] -> Ok
  + novel.coapnet.timeset.csv :: Gephi -> File -> Import Spreadsheet -> Next -> Finish
+5. Enjoy!
+[[./images/quijote.png]]
+
