@@ -38,4 +38,4 @@ Let's generate a dynamic network in [[https://gephi.org][Gephi]] with the help o
  + novel.coapnet.timeset.csv :: Gephi -> File -> Import Spreadsheet -> Next -> Finish
 5. Enjoy!
 [[./images/quijote.png]]
-
+[[https://viraltux.github.io/Robocoap/images/quijote.png]]
