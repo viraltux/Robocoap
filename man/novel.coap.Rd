@@ -42,9 +42,6 @@ characters within split sections) will be similar to interactions among
 characters (defined as characters being object of actions by other
 characters). Check the example for further details.
 
-Specific writing formats like theather plays or scientific papers  will
-be handled in future releases.
-
 Follow these steps in order to load the dynamic graph of coapperances in
 Gephi:
 
